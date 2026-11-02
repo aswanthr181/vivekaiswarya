@@ -161,7 +161,7 @@ export default function Rsvp() {
         {/* Interactive "Send Love" heart button */}
         <div className="mt-8 pt-6 border-t border-[#d5a24f]/20 flex flex-col items-center">
           <p className="text-xs font-sans text-[#735146] mb-3">
-            Want to send extra love to Vivek &amp; Aiswarya?
+            Want to send extra love to Vivek &amp; Iswarya?
           </p>
           <button
             type="button"

@@ -107,7 +107,7 @@ export default function Wishes() {
 
   const getWhatsAppLink = () => {
     const text = encodeURIComponent(
-      `Hearty congratulations Vivek & Aiswarya on your wedding! 💍✨\n\n"${
+      `Hearty congratulations Vivek & Iswarya on your wedding! 💍✨\n\n"${
         message.trim() || 'Wishing you both a lifetime of love and happiness!'
       }"\n— ${name.trim() || 'Well wisher'}`
     );
@@ -171,7 +171,7 @@ export default function Wishes() {
               rows={3}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Write a sweet blessing for Vivek &amp; Aiswarya..."
+              placeholder="Write a sweet blessing for Vivek &amp; Iswarya..."
               className="w-full p-4 rounded-xl bg-[#fffcf7] border border-[#d5a24f]/30 focus:border-[#d5a24f] focus:outline-none focus:ring-2 focus:ring-[#d5a24f]/20 text-sm text-[#3d241c] placeholder:text-[#8a685e]/60 transition-all resize-none"
             />
           </div>

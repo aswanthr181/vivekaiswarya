@@ -121,7 +121,7 @@ export default function Story() {
           <div className="relative rounded-2xl overflow-hidden border-2 border-[#fffcf7] shadow-lg aspect-[3/4]">
             <img
               src={INVITATION_DATA.photos.story}
-              alt="Vivek and Aiswarya"
+              alt="Vivek and Iswarya"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#3d241c]/50 via-transparent to-transparent opacity-60" />
@@ -137,7 +137,7 @@ export default function Story() {
         <div ref={textBlockRef} className="md:col-span-7 flex flex-col justify-center text-left">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="text-xs uppercase tracking-widest font-sans font-bold text-[#b38030]">
-              Vivek &amp; Aiswarya
+              Vivek &amp; Iswarya
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#d5a24f]" />
             <span className="text-xs text-[#8a685e] font-sans">Our Journey</span>
@@ -159,7 +159,7 @@ export default function Story() {
           <div ref={sigRef} className="pt-4 border-t border-[#d5a24f]/25 flex items-center justify-between">
             <div className="flex flex-col">
               <span className="font-script text-3xl sm:text-4xl text-[#b38030]">
-                Vivek &amp; Aiswarya
+                Vivek &amp; Iswarya
               </span>
               <span className="text-[11px] font-sans uppercase tracking-widest text-[#8a685e]">
                 December 20, 2026

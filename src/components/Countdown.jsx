@@ -129,7 +129,7 @@ export default function Countdown() {
           A little closer every day
         </h2>
         <p className="font-serif italic text-base sm:text-lg text-[#6a473b] mt-2">
-          Until Vivek &amp; Aiswarya tie the knot forever
+          Until Vivek &amp; Iswarya tie the knot forever
         </p>
       </div>
 

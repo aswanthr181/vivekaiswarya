@@ -1,15 +1,15 @@
 export const INVITATION_DATA = {
-  couple: "Vivek & Aiswarya",
+  couple: "Vivek & Iswarya",
   groom: "Vivek",
-  bride: "Aiswarya",
+  bride: "Iswarya",
   tagline: "A quiet forever, beautifully begun.",
   weddingDate: "20 December 2026",
   weddingDateISO: "2026-12-20T11:58:00+05:30",
   weddingEndISO: "2026-12-20T12:10:00+05:30",
   weddingTime: "11:58 AM to 12:10 PM",
   music: "/assets/wedding-bg-music.m4a",
-  audioTitle: "O Rangrez – Shreya Ghoshal & Javed Bashir",
-  coupleWhatsApp: "919037063582",
+  audioTitle: "O Rangrez - Shreya Ghoshal & Javed Bashir",
+  coupleWhatsApp: "919061209721",
   
   marriageVenue: {
     name: "Anugraha Auditorium",
@@ -23,12 +23,12 @@ export const INVITATION_DATA = {
   
   receptionVenue: {
     name: "Sowbhagya Convention Center",
-    event: "Grand Wedding Reception",
+    event: "Wedding Reception",
     time: "From 4:30 PM onwards",
     date: "Sunday, 20 Dec 2026",
     mapLink: "https://share.google/s8mlSWNi1YlK6400U",
     embedMapQuery: "SOWBHAGYA AC CONVENTION CENTER Nedungolam Paravur Kollam",
-    description: "An evening of grand celebration, feast, photographs & heartfelt blessings."
+    description: "An evening of  celebration, feast, photographs & heartfelt blessings."
   },
 
   venues: [
@@ -37,7 +37,7 @@ export const INVITATION_DATA = {
       badge: "The Holy Wedding (Muhoortham)",
       name: "Anugraha Auditorium",
       date: "Sunday, 20 December 2026",
-      time: "11:58 AM – 12:10 PM",
+      time: "11:58 AM - 12:10 PM",
       mapLink: "https://share.google/ScjOTR6QxVD6RKi9o",
       embedQuery: "Anugraha Auditorium",
       accent: "wedding",
@@ -45,14 +45,14 @@ export const INVITATION_DATA = {
     },
     {
       id: "reception",
-      badge: "Grand Evening Reception",
+      badge: "Evening Reception",
       name: "Sowbhagya  Convention Center",
       date: "Sunday, 20 December 2026",
       time: "From 4:30 PM onwards",
       mapLink: "https://share.google/s8mlSWNi1YlK6400U",
       embedQuery: "SOWBHAGYA AC CONVENTION CENTER Nedungolam Paravur Kollam",
       accent: "champagne",
-      description: "A celebration of love filled with laughter, grand dinner, music, and eternal memories."
+      description: "A celebration of love filled with laughter, celebration, dinner, music, and eternal memories."
     }
   ],
 
@@ -101,7 +101,7 @@ export const INVITATION_DATA = {
     },
     {
       id: "reception",
-      title: "Grand Wedding Reception",
+      title: "Wedding Reception",
       subtitle: "An evening of celebration, delicious feast, music & blessings",
       date: "Sunday, 20 Dec 2026",
       time: "From 4:30 PM onwards",
@@ -129,8 +129,8 @@ export const INVITATION_DATA = {
       whatsapp: "919645743076"
     },
     {
-      role: "Bride's Family (Aiswarya)",
-      name: "Aiswarya's Family Support",
+      role: "Bride's Family (Iswarya)",
+      name: "Iswarya's Family Support",
       phone: "",
       whatsapp: "91"
     }

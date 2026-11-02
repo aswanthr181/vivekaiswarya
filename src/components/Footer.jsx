@@ -83,7 +83,7 @@ export default function Footer() {
             "{INVITATION_DATA.closingNote}"
           </p>
           <div className="font-script text-4xl sm:text-5xl text-[#d5a24f] mt-4">
-            Vivek &amp; Aiswarya
+            Vivek &amp; Iswarya
           </div>
         </div>
 
@@ -127,7 +127,7 @@ export default function Footer() {
 
                       <a
                         href={`https://wa.me/${cleanWhatsApp}?text=${encodeURIComponent(
-                          `Hi ${c.name || ''}, I have a query regarding Vivek & Aiswarya's wedding.`
+                          `Hi ${c.name || ''}, I have a query regarding Vivek & Iswarya's wedding.`
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -168,7 +168,7 @@ export default function Footer() {
         </div>
 
         <p className="text-[11px] font-sans text-[#8a685e]/80 mt-10">
-          Created with endless love for Vivek &amp; Aiswarya's Wedding • 20 December 2026
+          Created with endless love for Vivek &amp; Iswarya's Wedding • 20 December 2026
         </p>
       </div>
 

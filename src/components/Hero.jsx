@@ -198,7 +198,7 @@ export default function Hero() {
         <img
           ref={bgImageRef}
           src={INVITATION_DATA.photos.hero}
-          alt="Vivek and Aiswarya"
+          alt="Vivek and Iswarya"
           className="w-full h-full object-cover object-center will-change-transform"
           style={{ opacity: 0 }}
         />

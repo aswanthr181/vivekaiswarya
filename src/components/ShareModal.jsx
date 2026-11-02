@@ -17,7 +17,7 @@ export default function ShareModal({ isOpen, onClose }) {
   const shareTitle = `${INVITATION_DATA.couple} | Wedding Invitation`;
   const shareText = `You're warmly invited to celebrate the wedding of ${INVITATION_DATA.couple} on 20 December 2026! 💍✨\n\nMarriage: Anugraha Auditorium (Muhoortham 11:58 AM – 12:10 PM)\nReception: SOWBHAGYA AC CONVENTION CENTER (From 4:30 PM)\n\nView the wedding invitation card: ${currentUrl}`;
   const shareSubject = `Wedding Invitation - ${INVITATION_DATA.couple}`;
-  const shareEmailBody = `Dear Family & Friends,\n\nYou are warmly invited to celebrate the beginning of forever with ${INVITATION_DATA.couple}!\n\nDate: Sunday, 20 December 2026\nMarriage (Muhoortham): 11:58 AM to 12:10 PM at Anugraha Auditorium\nWedding Reception: From 4:30 PM onwards at SOWBHAGYA AC CONVENTION CENTER\n\nPlease explore our online wedding invitation:\n${currentUrl}\n\nWith love,\nVivek & Aiswarya`;
+  const shareEmailBody = `Dear Family & Friends,\n\nYou are warmly invited to celebrate the beginning of forever with ${INVITATION_DATA.couple}!\n\nDate: Sunday, 20 December 2026\nMarriage (Muhoortham): 11:58 AM to 12:10 PM at Anugraha Auditorium\nWedding Reception: From 4:30 PM onwards at SOWBHAGYA AC CONVENTION CENTER\n\nPlease explore our online wedding invitation:\n${currentUrl}\n\nWith love,\nVivek & Iswarya`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(currentUrl);
@@ -30,7 +30,7 @@ export default function ShareModal({ isOpen, onClose }) {
       try {
         await navigator.share({
           title: shareTitle,
-          text: `You're invited to Vivek & Aiswarya's Wedding on 20 December 2026! 💍✨`,
+          text: `You're invited to Vivek & Iswarya's Wedding on 20 December 2026! 💍✨`,
           url: currentUrl,
         });
       } catch (err) {
@@ -108,7 +108,7 @@ export default function ShareModal({ isOpen, onClose }) {
             Share Invitation
           </h3>
           <p className="font-sans text-xs text-[#735146] mt-1 max-w-xs">
-            Choose an app or copy the link to share Vivek &amp; Aiswarya's wedding celebration
+            Choose an app or copy the link to share Vivek &amp; Iswarya's wedding celebration
           </p>
         </div>
 
@@ -116,7 +116,7 @@ export default function ShareModal({ isOpen, onClose }) {
         <div className="flex items-center gap-3 p-3 rounded-2xl bg-[#fffcf7] border border-[#d5a24f]/30 mb-6 text-left shadow-sm">
           <img
             src={INVITATION_DATA.photos.hero}
-            alt="Vivek and Aiswarya"
+            alt="Vivek and Iswarya"
             className="w-12 h-12 rounded-xl object-cover shrink-0 border border-[#d5a24f]/40"
           />
           <div className="min-w-0 flex-1">

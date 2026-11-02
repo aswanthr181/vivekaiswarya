@@ -140,19 +140,19 @@ export default function DateReveal() {
   const createGoogleCalendarLink = () => {
     const start = '20261220T062800Z'; // 11:58 AM IST
     const end = '20261220T064000Z';   // 12:10 PM IST
-    const title = encodeURIComponent('Vivek & Aiswarya Wedding Ceremony (Muhoortham)');
+    const title = encodeURIComponent('Vivek & Iswarya Wedding Ceremony (Muhoortham)');
     const details = encodeURIComponent(
-      'The sacred wedding ceremony of Vivek & Aiswarya.\n\nMuhoortham: 11:58 AM to 12:10 PM at Anugraha Auditorium (https://share.google/ScjOTR6QxVD6RKi9o)\nReception: From 4:30 PM at SOWBHAGYA AC CONVENTION CENTER (https://share.google/s8mlSWNi1YlK6400U)'
+      'The sacred wedding ceremony of Vivek & Iswarya.\n\nMuhoortham: 11:58 AM to 12:10 PM at Anugraha Auditorium (https://share.google/ScjOTR6QxVD6RKi9o)\nReception: From 4:30 PM at SOWBHAGYA AC CONVENTION CENTER (https://share.google/s8mlSWNi1YlK6400U)'
     );
     const location = encodeURIComponent('Anugraha Auditorium');
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}`;
   };
 
   const handleShareDate = () => {
-    const text = `Save the Date! Vivek & Aiswarya's Wedding on 20 December 2026! ✨💍\n\nMarriage: Anugraha Auditorium (Muhoortham 11:58 AM – 12:10 PM)\nMap: https://share.google/ScjOTR6QxVD6RKi9o\n\nReception: SOWBHAGYA AC CONVENTION CENTER (From 4:30 PM)\nMap: https://share.google/s8mlSWNi1YlK6400U\n\n${window.location.href}`;
+    const text = `Save the Date! Vivek & Iswarya's Wedding on 20 December 2026! ✨💍\n\nMarriage: Anugraha Auditorium (Muhoortham 11:58 AM – 12:10 PM)\nMap: https://share.google/ScjOTR6QxVD6RKi9o\n\nReception: SOWBHAGYA AC CONVENTION CENTER (From 4:30 PM)\nMap: https://share.google/s8mlSWNi1YlK6400U\n\n${window.location.href}`;
     if (navigator.share) {
       navigator.share({
-        title: 'Save The Date - Vivek & Aiswarya',
+        title: 'Save The Date - Vivek & Iswarya',
         text,
         url: window.location.href,
       }).catch(() => {});

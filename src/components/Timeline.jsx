@@ -96,9 +96,9 @@ export default function Timeline() {
 
     const start = toISOStringWithoutDashes(event.startISO);
     const end = toISOStringWithoutDashes(event.endISO);
-    const title = encodeURIComponent(`${event.title} - Vivek & Aiswarya`);
+    const title = encodeURIComponent(`${event.title} - Vivek & Iswarya`);
     const details = encodeURIComponent(
-      `${event.subtitle}\n\nVenue: ${event.location}\nCouple: Vivek & Aiswarya Wedding\nDress Code: ${event.dressCode}`
+      `${event.subtitle}\n\nVenue: ${event.location}\nCouple: Vivek & Iswarya Wedding\nDress Code: ${event.dressCode}`
     );
     const location = encodeURIComponent(event.location);
 
