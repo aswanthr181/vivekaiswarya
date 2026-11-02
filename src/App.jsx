@@ -27,6 +27,7 @@ export default function App() {
     setIsOpened(true);
     // Play audio upon opening invitation
     if (audioRef.current) {
+      audioRef.current.currentTime = 0;
       audioRef.current
         .play()
         .then(() => {
@@ -67,7 +68,7 @@ export default function App() {
     <div className="relative min-h-screen paper-texture overflow-x-hidden">
       {/* Background Music Element */}
       <audio ref={audioRef} loop preload="auto">
-        <source src={INVITATION_DATA.music} type="audio/mp4" />
+        <source src={INVITATION_DATA.music} type="audio/mpeg" />
       </audio>
 
       {/* Falling Flower Petals Canvas */}

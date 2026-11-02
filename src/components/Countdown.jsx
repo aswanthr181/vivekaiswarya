@@ -156,7 +156,7 @@ export default function Countdown() {
       {/* Romantic Date Subtext */}
       <div ref={dateTagRef} className="mt-8 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#fffcf7]/80 border border-[#d5a24f]/30 text-xs font-sans text-[#735146] shadow-sm">
         <Heart className="w-3.5 h-3.5 text-[#d5a24f] fill-[#d5a24f]" />
-        <span>Sunday, 20 December 2026 • Muhoortham 11:58 AM at Anugraha Auditorium</span>
+        <span>Celebrations begin Sat, 19 Dec (Bride's Reception) • Muhoortham Sun, 20 Dec at Anugraha Auditorium</span>
       </div>
     </section>
   );

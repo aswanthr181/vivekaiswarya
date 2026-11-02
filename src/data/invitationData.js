@@ -7,10 +7,20 @@ export const INVITATION_DATA = {
   weddingDateISO: "2026-12-20T11:58:00+05:30",
   weddingEndISO: "2026-12-20T12:10:00+05:30",
   weddingTime: "11:58 AM to 12:10 PM",
-  music: "/assets/wedding-bg-music.m4a",
-  audioTitle: "O Rangrez - Shreya Ghoshal & Javed Bashir",
+  music: "/assets/Rangrez-weddingbgm.mp3",
+  audioTitle: "Rangrez - Wedding BGM",
   coupleWhatsApp: "919061209721",
   
+  brideReceptionVenue: {
+    name: "Anugraha Auditorium",
+    event: "Bride's Reception",
+    time: "From 4:30 PM onwards",
+    date: "Saturday, 19 Dec 2026",
+    mapLink: "https://share.google/ScjOTR6QxVD6RKi9o",
+    embedMapQuery: "Anugraha Auditorium",
+    description: "An auspicious evening celebrating the bride with joyful blessings, feast & warm celebration."
+  },
+
   marriageVenue: {
     name: "Anugraha Auditorium",
     event: "Marriage Ceremony (Muhoortham)",
@@ -28,31 +38,55 @@ export const INVITATION_DATA = {
     date: "Sunday, 20 Dec 2026",
     mapLink: "https://share.google/s8mlSWNi1YlK6400U",
     embedMapQuery: "SOWBHAGYA AC CONVENTION CENTER Nedungolam Paravur Kollam",
-    description: "An evening of  celebration, feast, photographs & heartfelt blessings."
+    description: "An evening of celebration, feast, photographs & heartfelt blessings."
   },
 
   venues: [
     {
-      id: "marriage",
-      badge: "The Holy Wedding (Muhoortham)",
+      id: "anugraha",
       name: "Anugraha Auditorium",
-      date: "Sunday, 20 December 2026",
-      time: "11:58 AM - 12:10 PM",
+      tag: "Ceremony & Bride's Reception",
       mapLink: "https://share.google/ScjOTR6QxVD6RKi9o",
       embedQuery: "Anugraha Auditorium",
       accent: "wedding",
-      description: "The sacred vows, thali kettu ceremony & traditional rituals in the warmth of our loved ones."
+      description: "Hosting both the auspicious Bride's Reception and the sacred Holy Marriage Ceremony (Muhoortham).",
+      occasions: [
+        {
+          id: "bride-reception",
+          badge: "Bride's Reception",
+          date: "Saturday, 19 December 2026",
+          time: "From 4:30 PM onwards",
+          description: "An auspicious evening celebrating the bride with joyful blessings, feast & music.",
+          accent: "rose"
+        },
+        {
+          id: "marriage",
+          badge: "The Holy Wedding (Muhoortham)",
+          date: "Sunday, 20 December 2026",
+          time: "11:58 AM to 12:10 PM",
+          description: "The sacred vows, thali kettu ceremony & traditional rituals in the warmth of loved ones.",
+          accent: "wedding"
+        }
+      ]
     },
     {
-      id: "reception",
-      badge: "Evening Reception",
-      name: "Sowbhagya  Convention Center",
-      date: "Sunday, 20 December 2026",
-      time: "From 4:30 PM onwards",
+      id: "sowbhagya",
+      name: "Sowbhagya AC Convention Center",
+      tag: "Evening Wedding Reception",
       mapLink: "https://share.google/s8mlSWNi1YlK6400U",
       embedQuery: "SOWBHAGYA AC CONVENTION CENTER Nedungolam Paravur Kollam",
       accent: "champagne",
-      description: "A celebration of love filled with laughter, celebration, dinner, music, and eternal memories."
+      description: "Hosting the grand celebratory wedding reception filled with dinner, music, and eternal memories.",
+      occasions: [
+        {
+          id: "reception",
+          badge: "Wedding Reception",
+          date: "Sunday, 20 December 2026",
+          time: "From 4:30 PM onwards",
+          description: "A celebration of love filled with laughter, dinner, music, and heartfelt blessings.",
+          accent: "champagne"
+        }
+      ]
     }
   ],
 
@@ -86,9 +120,25 @@ export const INVITATION_DATA = {
 
   timeline: [
     {
+      id: "bride-reception",
+      title: "Bride's Reception",
+      subtitle: "An evening of joy, love, feast & blessings honoring the bride",
+      badgeText: "Bride's Reception",
+      date: "Saturday, 19 Dec 2026",
+      time: "From 4:30 PM onwards",
+      startISO: "2026-12-19T16:30:00+05:30",
+      endISO: "2026-12-19T21:30:00+05:30",
+      accent: "rose",
+      featured: false,
+      location: "Anugraha Auditorium",
+      mapLink: "https://share.google/ScjOTR6QxVD6RKi9o",
+      dressCode: "Traditional / Festive Elegance"
+    },
+    {
       id: "marriage",
       title: "The Sacred Marriage Ceremony",
       subtitle: "The sacred vows, thali kettu & forever begins",
+      badgeText: "The Sacred Muhurtham",
       date: "Sunday, 20 Dec 2026",
       time: "11:58 AM to 12:10 PM (Muhoortham)",
       startISO: "2026-12-20T11:58:00+05:30",
@@ -103,12 +153,13 @@ export const INVITATION_DATA = {
       id: "reception",
       title: "Wedding Reception",
       subtitle: "An evening of celebration, delicious feast, music & blessings",
+      badgeText: "Wedding Reception",
       date: "Sunday, 20 Dec 2026",
       time: "From 4:30 PM onwards",
       startISO: "2026-12-20T16:30:00+05:30",
       endISO: "2026-12-20T21:30:00+05:30",
       accent: "champagne",
-      featured: true,
+      featured: false,
       location: "SOWBHAGYA AC CONVENTION CENTER",
       mapLink: "https://share.google/s8mlSWNi1YlK6400U",
       dressCode: "Celebratory Festive Attire"

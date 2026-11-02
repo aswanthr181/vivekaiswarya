@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MapPin, Navigation, Copy, Check, ExternalLink, Heart, Clock, Sparkles } from 'lucide-react';
+import { MapPin, Navigation, Copy, Check, ExternalLink, Heart, Clock, Sparkles, Calendar } from 'lucide-react';
 import { INVITATION_DATA } from '../data/invitationData';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -80,7 +80,7 @@ export default function Venue() {
         <h2 className="font-serif text-3xl sm:text-5xl text-[#3d241c] font-bold">
           Meet us at Our Celebrations
         </h2>
-        <p className="font-serif italic text-base sm:text-lg text-[#6a473b] mt-2 max-w-md mx-auto">
+        <p className="font-serif italic text-base sm:text-lg text-[#6a473b] mt-2 max-w-lg mx-auto">
           We eagerly look forward to welcoming you at both auspicious destinations
         </p>
         <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#d5a24f] to-transparent mx-auto mt-4" />
@@ -91,28 +91,29 @@ export default function Venue() {
         {INVITATION_DATA.venues.map((v) => (
           <div
             key={v.id}
-            className={`glass-card rounded-3xl p-6 sm:p-8 shadow-xl border flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 ${v.id === 'marriage'
+            className={`glass-card rounded-3xl p-6 sm:p-8 shadow-xl border flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 ${
+              v.id === 'anugraha' || v.id === 'marriage'
                 ? 'border-[#d5a24f] bg-gradient-to-br from-[#fffdfa] via-[#fff8ef] to-[#fcefe3] ring-2 ring-[#d5a24f]/20'
                 : 'border-[#d5a24f]/35 bg-gradient-to-br from-[#fffdf8] via-[#fffaf4] to-[#faeee3]'
-              }`}
+            }`}
           >
             <div>
-              {/* Badge */}
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
+              {/* Badge & Occasions Count */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
                 <span
-                  className={`inline-flex items-center justify-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-sans font-bold tracking-wider uppercase shadow-sm ${v.id === 'marriage'
+                  className={`inline-flex items-center justify-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-sans font-bold tracking-wider uppercase shadow-sm ${
+                    v.id === 'anugraha' || v.id === 'marriage'
                       ? 'bg-[#d5a24f] text-white'
                       : 'bg-[#5c3e34] text-[#ffeed8]'
-                    }`}
+                  }`}
                 >
                   <Sparkles className="w-3 h-3" />
-                  <span>{v.badge}</span>
+                  <span>{v.tag || v.badge}</span>
                 </span>
 
-                <div className="flex items-center sm:justify-center gap-1 text-xs font-semibold text-[#8a5d24]">
-                  <Clock className="w-3.5 h-3.5" />
-                  <span>{v.time}</span>
-                </div>
+                <span className="text-[11px] font-sans font-semibold text-[#8a5d24] bg-[#fffaf3] px-3 py-1 rounded-full border border-[#d5a24f]/25 self-start sm:self-auto">
+                  {v.occasions?.length > 1 ? `${v.occasions.length} Occasions` : '1 Occasion'}
+                </span>
               </div>
 
               {/* Venue Name */}
@@ -120,9 +121,55 @@ export default function Venue() {
                 {v.name}
               </h3>
 
-              <p className="font-sans text-xs sm:text-sm text-[#735146] mb-5 leading-relaxed">
+              <p className="font-sans text-xs sm:text-sm text-[#735146] mb-4 leading-relaxed">
                 {v.description}
               </p>
+
+              {/* Occasions with Timestamps list on the SAME venue card */}
+              <div className="space-y-2.5 mb-6">
+                <span className="text-[11px] uppercase tracking-wider font-sans font-bold text-[#b38030] block">
+                  {v.occasions?.length > 1 ? 'Occasions at this venue:' : 'Occasion at this venue:'}
+                </span>
+                {v.occasions?.map((occ) => (
+                  <div
+                    key={occ.id}
+                    className={`p-3.5 rounded-2xl border transition-all ${
+                      occ.id === 'marriage'
+                        ? 'bg-[#fffaf2] border-[#d5a24f]/40 shadow-xs'
+                        : occ.id === 'bride-reception'
+                        ? 'bg-[#fff7f4] border-[#f4b8aa]/60 shadow-xs'
+                        : 'bg-[#fffaf4] border-[#d5a24f]/30 shadow-xs'
+                    }`}
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+                      <span
+                        className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-sans font-bold tracking-wider uppercase shadow-xs ${
+                          occ.id === 'marriage'
+                            ? 'bg-[#d5a24f] text-white'
+                            : occ.id === 'bride-reception'
+                            ? 'bg-[#b34055] text-white'
+                            : 'bg-[#5c3e34] text-[#ffeed8]'
+                        }`}
+                      >
+                        <Sparkles className="w-2.5 h-2.5" />
+                        <span>{occ.badge}</span>
+                      </span>
+
+                      <div className="flex items-center gap-1.5 text-xs font-semibold text-[#8a5d24] bg-[#fffdf8] px-2.5 py-0.5 rounded-full border border-[#d5a24f]/25">
+                        <Clock className="w-3.5 h-3.5 text-[#d5a24f]" />
+                        <span>{occ.time}</span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between text-xs text-[#5c3e34] font-medium pt-0.5">
+                      <div className="flex items-center gap-1.5 text-xs text-[#6a473b]">
+                        <Calendar className="w-3.5 h-3.5 text-[#d5a24f] shrink-0" />
+                        <span className="font-semibold text-[#3d241c]">{occ.date}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
               {/* Beautiful Romantic Map Card Blended with UI */}
               <div className="w-full h-[220px] rounded-2xl overflow-hidden border-2 border-[#d5a24f]/35 shadow-md mb-6 relative group bg-[#fbf6ee]">
@@ -153,7 +200,9 @@ export default function Venue() {
                 <div className="absolute top-3 left-3 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#fffdf9]/90 backdrop-blur-md border border-[#d5a24f]/40 shadow-sm pointer-events-none">
                   <span className="w-2 h-2 rounded-full bg-[#d5a24f] animate-ping" />
                   <span className="text-[11px] font-sans font-semibold text-[#6a473b]">
-                    {v.id === 'marriage' ? 'Ceremony Destination' : 'Reception Destination'}
+                    {v.id === 'anugraha' || v.id === 'marriage'
+                      ? "Ceremony & Bride's Reception Destination"
+                      : 'Reception Destination'}
                   </span>
                 </div>
 
@@ -207,7 +256,7 @@ export default function Venue() {
 
               <button
                 onClick={() => handleCopy(v.id, v.name)}
-                className="px-4 py-3 rounded-full text-xs font-sans font-medium text-[#5c3e34] bg-[#fffaf3] border border-[#d5a24f]/40 hover:border-[#d5a24f] shadow-sm transition-all flex items-center gap-1.5"
+                className="px-4 py-3 rounded-full text-xs font-sans font-medium text-[#5c3e34] bg-[#fffaf3] border border-[#d5a24f]/40 hover:border-[#d5a24f] shadow-sm transition-all flex items-center gap-1.5 cursor-pointer"
               >
                 {copiedId === v.id ? (
                   <>

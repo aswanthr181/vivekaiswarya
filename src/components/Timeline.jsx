@@ -140,14 +140,24 @@ export default function Timeline() {
                 className={`timeline-card w-full md:w-[calc(50%-2rem)] glass-card rounded-3xl p-6 sm:p-8 shadow-xl transition-all duration-300 hover:-translate-y-1 ${
                   event.featured
                     ? 'border-2 border-[#d5a24f] bg-gradient-to-br from-[#fffdfa] via-[#fff8ef] to-[#fcefe3] ring-4 ring-[#d5a24f]/15'
-                    : 'border border-[#d5a24f]/30'
+                    : event.id === 'bride-reception'
+                    ? 'border-2 border-[#f4b8aa] bg-gradient-to-br from-[#fffdfa] via-[#fff8f5] to-[#fdedea] ring-4 ring-[#f4b8aa]/15'
+                    : 'border border-[#d5a24f]/30 bg-gradient-to-br from-[#fffdf8] via-[#fffaf4] to-[#faeee3]'
                 }`}
               >
-                {/* Featured Badge */}
-                {event.featured && (
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#d5a24f] text-white text-[11px] font-sans font-semibold tracking-wider uppercase mb-3 shadow-sm">
+                {/* Event Badge */}
+                {event.badgeText && (
+                  <div
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-sans font-semibold tracking-wider uppercase mb-3 shadow-sm ${
+                      event.id === 'bride-reception'
+                        ? 'bg-[#b34055] text-white'
+                        : event.id === 'marriage'
+                        ? 'bg-[#d5a24f] text-white'
+                        : 'bg-[#5c3e34] text-[#ffeed8]'
+                    }`}
+                  >
                     <Sparkles className="w-3 h-3" />
-                    <span>The Sacred Muhurtham</span>
+                    <span>{event.badgeText}</span>
                   </div>
                 )}
 
@@ -172,9 +182,14 @@ export default function Timeline() {
                 <div className="space-y-2 mb-6 text-xs text-[#5c3e34] border-t border-[#d5a24f]/20 pt-3">
                   <div className="flex items-start gap-2">
                     <MapPin className="w-4 h-4 text-[#d5a24f] shrink-0 mt-0.5" />
-                    <span>{event.location}</span>
+                    <span className="font-medium">{event.location}</span>
                   </div>
-                  
+                  {event.dressCode && (
+                    <div className="flex items-center gap-2 text-[#8a685e]">
+                      <Sparkles className="w-3.5 h-3.5 text-[#d5a24f] shrink-0" />
+                      <span>{event.dressCode}</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Actions: Map & Calendar */}

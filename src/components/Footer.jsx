@@ -168,7 +168,7 @@ export default function Footer() {
         </div>
 
         <p className="text-[11px] font-sans text-[#8a685e]/80 mt-10">
-          Created with endless love for Vivek &amp; Iswarya's Wedding • 20 December 2026
+          Created with endless love for Vivek &amp; Iswarya's Wedding • 19 &amp; 20 December 2026
         </p>
       </div>
 

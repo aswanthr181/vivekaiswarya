@@ -15,9 +15,9 @@ export default function ShareModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   const shareTitle = `${INVITATION_DATA.couple} | Wedding Invitation`;
-  const shareText = `You're warmly invited to celebrate the wedding of ${INVITATION_DATA.couple} on 20 December 2026! 💍✨\n\nMarriage: Anugraha Auditorium (Muhoortham 11:58 AM – 12:10 PM)\nReception: SOWBHAGYA AC CONVENTION CENTER (From 4:30 PM)\n\nView the wedding invitation card: ${currentUrl}`;
+  const shareText = `You're warmly invited to celebrate the wedding of ${INVITATION_DATA.couple}!\n\n✨ Bride's Reception: Saturday, 19 Dec 2026 (From 4:30 PM) at Anugraha Auditorium\n💍 Marriage (Muhoortham): Sunday, 20 Dec 2026 (11:58 AM – 12:10 PM) at Anugraha Auditorium\n🥂 Wedding Reception: Sunday, 20 Dec 2026 (From 4:30 PM) at SOWBHAGYA AC CONVENTION CENTER\n\nView the wedding invitation: ${currentUrl}`;
   const shareSubject = `Wedding Invitation - ${INVITATION_DATA.couple}`;
-  const shareEmailBody = `Dear Family & Friends,\n\nYou are warmly invited to celebrate the beginning of forever with ${INVITATION_DATA.couple}!\n\nDate: Sunday, 20 December 2026\nMarriage (Muhoortham): 11:58 AM to 12:10 PM at Anugraha Auditorium\nWedding Reception: From 4:30 PM onwards at SOWBHAGYA AC CONVENTION CENTER\n\nPlease explore our online wedding invitation:\n${currentUrl}\n\nWith love,\nVivek & Iswarya`;
+  const shareEmailBody = `Dear Family & Friends,\n\nYou are warmly invited to celebrate the wedding celebrations of ${INVITATION_DATA.couple}!\n\n✨ Bride's Reception: Saturday, 19 December 2026 from 4:30 PM onwards at Anugraha Auditorium\n💍 Marriage Ceremony (Muhoortham): Sunday, 20 December 2026 from 11:58 AM to 12:10 PM at Anugraha Auditorium\n🥂 Wedding Reception: Sunday, 20 December 2026 from 4:30 PM onwards at SOWBHAGYA AC CONVENTION CENTER\n\nPlease explore our online wedding invitation:\n${currentUrl}\n\nWith love,\nVivek & Iswarya`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(currentUrl);
@@ -30,7 +30,7 @@ export default function ShareModal({ isOpen, onClose }) {
       try {
         await navigator.share({
           title: shareTitle,
-          text: `You're invited to Vivek & Iswarya's Wedding on 20 December 2026! 💍✨`,
+          text: `You're invited to Vivek & Iswarya's Wedding Celebrations (19 & 20 Dec 2026)! 💍✨`,
           url: currentUrl,
         });
       } catch (err) {
@@ -124,7 +124,7 @@ export default function ShareModal({ isOpen, onClose }) {
               {INVITATION_DATA.couple}
             </h4>
             <p className="text-[11px] font-sans text-[#8a5d24] font-medium truncate">
-              Sunday, 20 Dec 2026
+              19 &amp; 20 Dec 2026
             </p>
             <p className="text-[10px] font-sans text-[#8a685e] truncate">
               Anugraha Auditorium &amp; SOWBHAGYA AC CONVENTION CENTER

@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Rsvp() {
   const [attended, setAttended] = useState(false);
   const [guestCount, setGuestCount] = useState('2');
+  const [eventsAttending, setEventsAttending] = useState('all');
   const [guestName, setGuestName] = useState('');
   const [floatingHearts, setFloatingHearts] = useState([]);
   const sectionRef = useRef(null);
@@ -118,6 +119,21 @@ export default function Rsvp() {
 
             <div>
               <label className="block text-xs uppercase tracking-wider font-sans font-semibold text-[#614339] mb-1.5 text-left">
+                Events Attending
+              </label>
+              <select
+                value={eventsAttending}
+                onChange={(e) => setEventsAttending(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl bg-[#fffcf7] border border-[#d5a24f]/30 focus:border-[#d5a24f] focus:outline-none focus:ring-2 focus:ring-[#d5a24f]/20 text-sm text-[#3d241c] transition-all"
+              >
+                <option value="all">All Celebrations (19 &amp; 20 Dec)</option>
+                <option value="bride">Bride's Reception (19 Dec)</option>
+                <option value="wedding">Holy Wedding &amp; Reception (20 Dec)</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-xs uppercase tracking-wider font-sans font-semibold text-[#614339] mb-1.5 text-left">
                 Number of Guests Attending
               </label>
               <select
@@ -150,10 +166,10 @@ export default function Rsvp() {
               RSVP Confirmed!
             </h3>
             <p className="font-serif italic text-base text-[#6a473b] max-w-sm mb-4">
-              Thank you {guestName ? `, ${guestName}` : ''}! We cannot wait to embrace you with open arms on 20 December 2026.
+              Thank you {guestName ? `, ${guestName}` : ''}! We cannot wait to embrace you with open arms on 19 &amp; 20 December 2026.
             </p>
             <span className="text-xs font-sans text-[#b38030] font-semibold bg-[#fff6e6] px-4 py-1.5 rounded-full border border-[#d5a24f]/30">
-              Reserved for {guestCount} guest(s)
+              Reserved for {guestCount} guest(s) • {eventsAttending === 'bride' ? "Bride's Reception (19 Dec)" : eventsAttending === 'wedding' ? "Wedding & Reception (20 Dec)" : "All Celebrations"}
             </span>
           </div>
         )}

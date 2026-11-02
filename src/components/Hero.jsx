@@ -278,7 +278,7 @@ export default function Hero() {
           >
             <Calendar className="w-4 h-4 text-[#d5a24f]" />
             <span className="text-xs sm:text-sm font-sans font-medium text-[#4b3028]">
-              {INVITATION_DATA.weddingDate}
+              19 &amp; 20 December 2026
             </span>
           </div>
 

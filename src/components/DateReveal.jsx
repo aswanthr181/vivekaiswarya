@@ -138,18 +138,18 @@ export default function DateReveal() {
   };
 
   const createGoogleCalendarLink = () => {
-    const start = '20261220T062800Z'; // 11:58 AM IST
-    const end = '20261220T064000Z';   // 12:10 PM IST
-    const title = encodeURIComponent('Vivek & Iswarya Wedding Ceremony (Muhoortham)');
+    const start = '20261219T110000Z'; // 4:30 PM IST on Dec 19
+    const end = '20261220T160000Z';   // 9:30 PM IST on Dec 20
+    const title = encodeURIComponent('Vivek & Iswarya Wedding Celebrations');
     const details = encodeURIComponent(
-      'The sacred wedding ceremony of Vivek & Iswarya.\n\nMuhoortham: 11:58 AM to 12:10 PM at Anugraha Auditorium (https://share.google/ScjOTR6QxVD6RKi9o)\nReception: From 4:30 PM at SOWBHAGYA AC CONVENTION CENTER (https://share.google/s8mlSWNi1YlK6400U)'
+      'Celebrations of Vivek & Iswarya Wedding:\n\n1. Bride\'s Reception:\nSaturday, 19 Dec 2026, from 4:30 PM onwards at Anugraha Auditorium (https://share.google/ScjOTR6QxVD6RKi9o)\n\n2. Sacred Marriage Ceremony (Muhoortham):\nSunday, 20 Dec 2026, 11:58 AM to 12:10 PM at Anugraha Auditorium (https://share.google/ScjOTR6QxVD6RKi9o)\n\n3. Wedding Reception:\nSunday, 20 Dec 2026, from 4:30 PM onwards at SOWBHAGYA AC CONVENTION CENTER (https://share.google/s8mlSWNi1YlK6400U)'
     );
     const location = encodeURIComponent('Anugraha Auditorium');
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}`;
   };
 
   const handleShareDate = () => {
-    const text = `Save the Date! Vivek & Iswarya's Wedding on 20 December 2026! ✨💍\n\nMarriage: Anugraha Auditorium (Muhoortham 11:58 AM – 12:10 PM)\nMap: https://share.google/ScjOTR6QxVD6RKi9o\n\nReception: SOWBHAGYA AC CONVENTION CENTER (From 4:30 PM)\nMap: https://share.google/s8mlSWNi1YlK6400U\n\n${window.location.href}`;
+    const text = `Save the Date! Vivek & Iswarya's Wedding Celebrations! ✨💍\n\n🎉 Bride's Reception:\nSaturday, 19 Dec 2026 (From 4:30 PM) at Anugraha Auditorium\nMap: https://share.google/ScjOTR6QxVD6RKi9o\n\n💍 Marriage Ceremony (Muhoortham):\nSunday, 20 Dec 2026 (11:58 AM – 12:10 PM) at Anugraha Auditorium\nMap: https://share.google/ScjOTR6QxVD6RKi9o\n\n🥂 Wedding Reception:\nSunday, 20 Dec 2026 (From 4:30 PM) at SOWBHAGYA AC CONVENTION CENTER\nMap: https://share.google/s8mlSWNi1YlK6400U\n\n${window.location.href}`;
     if (navigator.share) {
       navigator.share({
         title: 'Save The Date - Vivek & Iswarya',
@@ -158,8 +158,6 @@ export default function DateReveal() {
       }).catch(() => {});
     } else {
       navigator.clipboard.writeText(text);
-      setCopiedLink(true);
-      setTimeout(() => setCopiedLink(false), 2500);
     }
   };
 
@@ -170,10 +168,10 @@ export default function DateReveal() {
           Save The Date
         </span>
         <h2 className="font-serif text-3xl sm:text-5xl text-[#3d241c] font-bold">
-          The Auspicious Muhoortham
+          The Auspicious Celebrations
         </h2>
         <p className="font-serif italic text-base sm:text-lg text-[#6a473b] mt-2 max-w-lg mx-auto">
-          Unseal our sacred wedding announcement to discover the auspicious moment of our forever
+          Unseal our sacred wedding announcement to discover the auspicious moments of our celebrations
         </p>
         <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#d5a24f] to-transparent mx-auto mt-4" />
       </div>
@@ -181,55 +179,79 @@ export default function DateReveal() {
       {/* Main Interactive Royal Box */}
       <div
         ref={cardRef}
-        className="relative mx-auto w-full max-w-[480px] min-h-[460px] rounded-3xl shadow-2xl border-2 border-[#d5a24f]/40 overflow-hidden bg-gradient-to-br from-[#fffdf8] via-[#fff7ef] to-[#fcefe2] [perspective:1200px]"
+        className="relative mx-auto w-full max-w-[500px] min-h-[530px] rounded-3xl shadow-2xl border-2 border-[#d5a24f]/40 overflow-hidden bg-gradient-to-br from-[#fffdf8] via-[#fff7ef] to-[#fcefe2] [perspective:1200px]"
       >
         {/* ================= REVEALED INNER CONTENT ================= */}
         <div
           ref={innerContentRef}
-          className={`p-6 sm:p-7 flex flex-col items-center justify-between min-h-[460px] ${
+          className={`p-5 sm:p-7 flex flex-col items-center justify-between min-h-[530px] ${
             !isUnsealed && !isAnimating ? 'opacity-0 pointer-events-none' : 'opacity-100'
           }`}
         >
           {/* Header Tag */}
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#d5a24f]/15 border border-[#d5a24f]/35 text-[#8a5d24] text-[11px] font-sans uppercase tracking-widest font-bold">
             <Sparkles className="w-3.5 h-3.5 text-[#d5a24f]" />
-            <span>Sacred Muhoortham &amp; Reception</span>
+            <span>Sacred Muhoortham &amp; Celebrations</span>
             <Sparkles className="w-3.5 h-3.5 text-[#d5a24f]" />
           </div>
 
-          {/* Large Date Display */}
-          <div className="my-2.5 py-2.5 w-full border-y border-[#d5a24f]/25 bg-[#fffaf3]/70 rounded-2xl">
-            <span className="text-xs uppercase tracking-[0.3em] font-sans text-[#8a685e] font-semibold block mb-0.5">
-              Sunday
+          {/* Date Display */}
+          <div className="my-2 py-2 w-full border-y border-[#d5a24f]/25 bg-[#fffaf3]/70 rounded-2xl">
+            <span className="text-[11px] uppercase tracking-[0.25em] font-sans text-[#8a685e] font-semibold block mb-0.5">
+              December 2026
             </span>
-            <div className="flex items-center justify-center gap-3">
-              <span className="font-serif text-5xl sm:text-6xl font-extrabold text-[#3d241c] tracking-tight drop-shadow-sm">
-                20
+            <div className="flex items-center justify-center gap-2">
+              <span className="font-serif text-3xl sm:text-4xl font-extrabold text-[#3d241c] tracking-tight drop-shadow-sm">
+                19 &amp; 20 Dec
               </span>
             </div>
-            <span className="font-serif italic text-xl sm:text-2xl font-bold text-[#b38030] block mt-0.5">
-              December 2026
+            <span className="font-serif italic text-xs font-bold text-[#b38030] block mt-0.5">
+              Saturday &amp; Sunday
             </span>
           </div>
 
-          {/* Venue & Timing Dual Cards */}
-          <div className="space-y-2 w-full text-left my-2">
-            {/* Marriage Card */}
+          {/* Celebrations Cards */}
+          <div className="space-y-2 w-full text-left my-1.5">
+            {/* Bride Reception */}
             <a
               href="https://share.google/ScjOTR6QxVD6RKi9o"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block p-3 rounded-xl bg-[#fff5eb] border border-[#d5a24f]/35 hover:border-[#d5a24f] hover:bg-[#ffede0] transition-all shadow-sm"
+              className="group block p-2.5 rounded-xl bg-[#fff8f5] border border-[#f4b8aa]/70 hover:border-[#d5a24f] hover:bg-[#fff0eb] transition-all shadow-sm"
             >
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] uppercase tracking-wider font-sans font-bold text-[#b38030]">
-                  Marriage Ceremony
+              <div className="flex items-center justify-between mb-0.5">
+                <span className="text-[10px] uppercase tracking-wider font-sans font-bold text-[#b34055]">
+                  Bride's Reception • Sat, 19 Dec
                 </span>
                 <span className="text-[10px] font-sans text-[#8a5d24] font-semibold group-hover:underline">
                   Open Map ↗
                 </span>
               </div>
-              <h4 className="font-serif font-bold text-base text-[#3d241c]">
+              <h4 className="font-serif font-bold text-sm text-[#3d241c]">
+                Anugraha Auditorium
+              </h4>
+              <div className="flex items-center gap-1.5 text-xs text-[#5c3e34] mt-0.5">
+                <Clock className="w-3.5 h-3.5 text-[#d5a24f]" />
+                <span className="font-semibold text-[#8a5d24]">From 4:30 PM onwards</span>
+              </div>
+            </a>
+
+            {/* Marriage Ceremony */}
+            <a
+              href="https://share.google/ScjOTR6QxVD6RKi9o"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block p-2.5 rounded-xl bg-[#fff5eb] border border-[#d5a24f]/40 hover:border-[#d5a24f] hover:bg-[#ffede0] transition-all shadow-sm ring-1 ring-[#d5a24f]/20"
+            >
+              <div className="flex items-center justify-between mb-0.5">
+                <span className="text-[10px] uppercase tracking-wider font-sans font-bold text-[#b38030]">
+                  Marriage Ceremony • Sun, 20 Dec
+                </span>
+                <span className="text-[10px] font-sans text-[#8a5d24] font-semibold group-hover:underline">
+                  Open Map ↗
+                </span>
+              </div>
+              <h4 className="font-serif font-bold text-sm text-[#3d241c]">
                 Anugraha Auditorium
               </h4>
               <div className="flex items-center gap-1.5 text-xs text-[#5c3e34] mt-0.5">
@@ -238,8 +260,29 @@ export default function DateReveal() {
               </div>
             </a>
 
-            {/* Reception Card */}
-            
+            {/* Wedding Reception */}
+            <a
+              href="https://share.google/s8mlSWNi1YlK6400U"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block p-2.5 rounded-xl bg-[#fffaf5] border border-[#d5a24f]/30 hover:border-[#d5a24f] hover:bg-[#fff2e3] transition-all shadow-sm"
+            >
+              <div className="flex items-center justify-between mb-0.5">
+                <span className="text-[10px] uppercase tracking-wider font-sans font-bold text-[#6a473b]">
+                  Wedding Reception • Sun, 20 Dec
+                </span>
+                <span className="text-[10px] font-sans text-[#8a5d24] font-semibold group-hover:underline">
+                  Open Map ↗
+                </span>
+              </div>
+              <h4 className="font-serif font-bold text-sm text-[#3d241c]">
+                Sowbhagya AC Convention Center
+              </h4>
+              <div className="flex items-center gap-1.5 text-xs text-[#5c3e34] mt-0.5">
+                <Clock className="w-3.5 h-3.5 text-[#d5a24f]" />
+                <span className="font-semibold text-[#8a5d24]">From 4:30 PM onwards</span>
+              </div>
+            </a>
           </div>
 
           {/* Action Buttons */}
