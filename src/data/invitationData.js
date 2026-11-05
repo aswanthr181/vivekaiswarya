@@ -165,7 +165,7 @@ export const INVITATION_DATA = {
       dressCode: "Celebratory Festive Attire"
     }
   ],
-
+  
   contacts: [
     {
       role: "Groom's",
@@ -180,10 +180,16 @@ export const INVITATION_DATA = {
       whatsapp: "919645743076"
     },
     {
-      role: "Bride's Family (Iswarya)",
-      name: "Iswarya's Family Support",
-      phone: "",
-      whatsapp: "91"
+      role: "Bride's Family",
+      name: "Brother",
+      phone: "+91 9072011581",
+      whatsapp: "9072011581"
+    },
+    {
+      role: "Bride's Family",
+      name: "Father",
+      phone: "+91 9744532018",
+      whatsapp: "9744532018"
     }
   ],
 
